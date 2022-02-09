@@ -1,0 +1,63 @@
+0 1
+0
+1 2
+0
+2 4
+0
+3 8
+1
+4 16
+0
+5 32
+2
+6 64
+1
+7 128
+1
+8 256
+2
+9 512
+3
+10 1024
+6
+11 2048
+6
+12 4096
+16
+13 8192
+16
+14 16384
+29
+15 32768
+183
+16 65536
+105
+17 131072
+200
+18 262144
+385
+19 524288
+1207
+20 1048576
+1327
+21 2097152
+2809
+22 4194304
+4760
+23 8388608
+10617
+24 16777216
+28311
+25 33554432
+77501
+26 67108864
+152051
+27 134217728
+384082
+28 268435456
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+        at java.base/java.lang.Integer.valueOf(Integer.java:1073)
+        at InMemory.sortExperiment(InMemory.java:29)
+        at InMemory.main(InMemory.java:16)
+Error
+Error
