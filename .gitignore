@@ -1,3 +1,4 @@
 *.class
 to_sort*
 .idea/
+*.swp

@@ -1,32 +1,43 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.*;
 
 public class InMemory {
 
-  public static void main(String [] args) {
+  public static void main(String [] args) throws Exception {
+    int size = Integer.parseInt(args[1]);
     if ("io".equals(args[0])) {
-      for (int i = 1; i < args.length; i++) {
-        long t1 = System.currentTimeMillis();
-        sortExperiment(args[i]);
-        long t2 = System.currentTimeMillis();
-        System.out.println((t2-t1));
-      }
+      long t1 = System.currentTimeMillis();
+      sortExperiment(size, args[2]);
+      long t2 = System.currentTimeMillis();
+      System.out.println((t2-t1));
     } else {
-      for (int i = 1; i < args.length; i++) {
-        int size = Integer.parseInt(args[i]);
-        sortExperiment(size);
-      }
+      sortExperiment(size);
     }
 
   }
 
-  private static void sortExperiment(String path) {
+  private static void sortExperiment(int size, String path) throws Exception {
+    List<Long> values = new ArrayList<>(size);
+    try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+      int lineCount = 0;
+      String line;
+      while (lineCount < size && (line = reader.readLine()) != null) {
+        values.add(Long.parseLong(line));
+      }
+      if (lineCount < size) {
+        throw new IllegalArgumentException(path + " did not contain " + size + " lines. only had " + lineCount);
+      }
+    }
+    sortExperiment(values);
   }
 
   private static void sortExperiment(int size) {
-    List<Integer> toSort = new ArrayList<>(size);
+    List<Long> toSort = new ArrayList<>(size);
     Random random = new Random(0);
     for (int i = 0; i< size; i++) {
-      toSort.add(random.nextInt());
+      toSort.add(random.nextLong());
     }
     long t1 = System.currentTimeMillis();
     sortExperiment(toSort);
@@ -34,7 +45,7 @@ public class InMemory {
     System.out.println((t2-t1));
   }
 
-  private static void sortExperiment(List<Integer> numbers) {
+  private static void sortExperiment(List<Long> numbers) {
     Collections.sort(numbers);
   }
 }

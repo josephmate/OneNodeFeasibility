@@ -61,3 +61,8 @@ Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
         at InMemory.main(InMemory.java:16)
 Error
 Error
+28 268435456
+511929
+29 536870912
+1614502
+30 1073741824

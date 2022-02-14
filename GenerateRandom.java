@@ -14,11 +14,11 @@ public class GenerateRandom {
     }
 
     final Random random = new Random(seed);
-    BufferedWriter writer = new BufferedWriter(new FileWriter("to_sort_" + size + ".txt"));
-    for (long i = 0; i < size; i++ ) {
-      writer.write(String.valueOf(random.nextLong()));
-      writer.write("\n");
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("to_sort_" + size + ".txt"))) {
+      for (long i = 0; i < size; i++) {
+        writer.write(String.valueOf(random.nextLong()));
+        writer.write("\n");
+      }
     }
-
   }
 }
