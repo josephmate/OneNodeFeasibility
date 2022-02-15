@@ -1,7 +1,7 @@
 #!/bin/bash
 
 size=1
-start=${1:-1}
+start=${1:-0}
 if [ "$start" -gt "1" ]
 then
   for i in $(seq 1 "$start");
