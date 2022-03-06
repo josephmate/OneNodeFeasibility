@@ -85,3 +85,8 @@ created: /tmp/unsorted.134217728.txt
 27 134217728
 exists: /tmp/unsorted.134217728.txt
 27 134217728
+exists: /tmp/unsorted.134217728.txt
+27 134217728
+2^27=134217728 5284 secs
+exists: /tmp/unsorted.268435456.txt
+28 268435456
