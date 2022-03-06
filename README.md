@@ -1,5 +1,17 @@
-This project attempts to experimentally determine when using one node to sort is
-sufficient.
+This project attempts to experimentally determine when using one node to do
+something is sufficient:
+
+1. sort
+2. datastore writes
+3. datastore reads
+
+Using this data, I'm hoping to answer questions like
+
+1. Can we support 1,000 writes per second on a database (BTree)?
+2. Can we support 10,000 reads per second on a database (BTree)?
+3. What about datastores that use log structure merge?
+4. How much data until I cannot process on a single node?
+
 
 
 | Power  |   Entries | Disk Size  | Java In Memory (sec) | Java IO (sec) | BSD Sort (sec) |
